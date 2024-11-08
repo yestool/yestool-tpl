@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Toolbox</title>
+    <meta name="description" content="A toolbox containing commonly used online tools such as timestamp conversion, JSON formatting, and IP lookup." />
+    <meta name="keywords" content="online tools, timestamp conversion, JSON formatting, IP lookup" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="../custom.css" rel="stylesheet" />
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans">
+    <!-- 头部导航 -->
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <span class="text-2xl font-bold">Online Toolbox</span>
+        <nav class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="language-toggle" class="text-white hover:underline">
+              <i class="fas fa-globe"></i>
+              <!-- 多语言切换图标 -->
+            </button>
+            <div id="language-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
+              <a href="../index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">中文</a>
+              <a href="/en/index-en.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+              <!-- 可以添加更多语言选项 -->
+            </div>
+          </div>
+          <button id="toggle-mode" class="text-white hover:underline">
+            <i class="fas fa-adjust"></i>
+            <!-- 切换模式图标 -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 中间内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6">Common Tools</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Timestamp Conversion Card -->
+        <a href="timestamp.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-clock text-blue-500 mr-2"></i>
+            <!-- Timestamp Conversion Icon -->
+            <h3 class="text-xl font-semibold">Timestamp Conversion</h3>
+          </div>
+          <p class="text-gray-600">Convert timestamps to readable dates and times, or convert dates and times to timestamps.</p>
+        </a>
+
+        <!-- JSON Formatting Card -->
+        <a href="json-formatter.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-code text-blue-500 mr-2"></i>
+            <!-- JSON Formatting Icon -->
+            <h3 class="text-xl font-semibold">JSON Formatting</h3>
+          </div>
+          <p class="text-gray-600">Format JSON data to make it easier to read and debug.</p>
+        </a>
+
+        <!-- IP Lookup Card -->
+        <a href="ip-lookup.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-globe text-blue-500 mr-2"></i>
+            <!-- IP Lookup Icon -->
+            <h3 class="text-xl font-semibold">IP Lookup</h3>
+          </div>
+          <p class="text-gray-600">Look up your public IP address and related information.</p>
+        </a>
+
+        <!-- Video to GIF Card -->
+        <a href="video-to-gif.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-film text-blue-500 mr-2"></i>
+            <!-- Video to GIF Icon -->
+            <h3 class="text-xl font-semibold">Video to GIF</h3>
+          </div>
+          <p class="text-gray-600">Convert video files to GIF animations for sharing on social media and chat apps.</p>
+        </a>
+      </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 hidden">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2023 Online Toolbox. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="/custom.js"></script>
+  </body>
+</html>

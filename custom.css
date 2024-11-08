@@ -1,0 +1,59 @@
+.dark-mode {
+  background-color: #1a202c;
+  color: #cbd5e0;
+}
+.dark-mode header {
+  background-color: #2d3748;
+}
+.dark-mode footer {
+  background-color: #2d3748;
+}
+.dark-mode .bg-white {
+  background-color: #2d3748;
+}
+.dark-mode .text-gray-600 {
+  color: #a0aec0;
+}
+.dark-mode .text-gray-700 {
+  color: #e2e8f0; /* 调整 label 标签的颜色 */
+}
+.dark-mode .text-gray-800 {
+  color: #e2e8f0;
+}
+.dark-mode .hover\:bg-blue-600:hover {
+  background-color: #4299e1;
+}
+.dark-mode input[type="date"],
+.dark-mode input[type="number"],
+.dark-mode input[type="text"],
+.dark-mode textarea {
+  background-color: #2d3748;
+  color: #cbd5e0;
+  border-color: #4a5568;
+}
+.dark-mode input[type="date"]:focus,
+.dark-mode input[type="number"]:focus,
+.dark-mode input[type="text"]:focus,
+.dark-mode textarea:focus {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+
+.card {
+  height: 150px; /* 设置固定高度 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}
+
+.card p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /* 限制显示的行数 */
+  overflow: hidden;
+}
+
+
+.related-tools .card {
+  height: 69px; /* 调整卡片高度 */
+  overflow: hidden; /* 隐藏溢出内容 */
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线工具箱</title>
+    <meta name="description" content="一个包含时间戳转换、JSON格式化、我的IP查询等常用在线工具的工具箱。" />
+    <meta name="keywords" content="在线工具, 时间戳转换, JSON格式化, IP查询" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="/fontawesome-free-6.6.0-web/css/all.min.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans">
+    <!-- 头部导航 -->
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <span class="text-2xl font-bold">在线工具箱</span>
+        <nav class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="language-toggle" class="text-white hover:underline">
+              <i class="fas fa-globe"></i>
+              <!-- 多语言切换图标 -->
+            </button>
+            <div id="language-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
+              <a href="../index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">中文</a>
+              <a href="/en/index-en.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+              <!-- 可以添加更多语言选项 -->
+            </div>
+          </div>
+          <button id="toggle-mode" class="text-white hover:underline">
+            <i class="fas fa-adjust"></i>
+            <!-- 切换模式图标 -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 中间内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6">常用工具</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 日期计算器 -->
+        <a href="date-calculator.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fa-solid fa-calculator text-blue-500 mr-2"></i>
+            <!-- 日期计算器图标 -->
+            <h3 class="text-xl font-semibold">日期计算器</h3>
+          </div>
+          <p class="text-gray-600">计算两个日期之间的时间差，或将日期转换为 Unix 时间戳。</p>
+        </a>
+        <!-- 时间戳转换卡片 -->
+        <a href="timestamp.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-clock text-blue-500 mr-2"></i>
+            <!-- 时间戳转换图标 -->
+            <h3 class="text-xl font-semibold">时间戳转换</h3>
+          </div>
+          <p class="text-gray-600">将时间戳转换为可读的日期和时间，或将日期和时间转换为时间戳。</p>
+        </a>
+        <!-- JSON 格式化卡片 -->
+        <a href="json-formatter.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-code text-blue-500 mr-2"></i>
+            <!-- JSON 格式化图标 -->
+            <h3 class="text-xl font-semibold">JSON 格式化</h3>
+          </div>
+          <p class="text-gray-600">格式化 JSON 数据，使其更易于阅读和调试。</p>
+        </a>
+        <!-- 我的 IP 查询卡片 -->
+        <a href="ip-lookup.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-globe text-blue-500 mr-2"></i>
+            <!-- 我的 IP 查询图标 -->
+            <h3 class="text-xl font-semibold">我的 IP 查询</h3>
+          </div>
+          <p class="text-gray-600">查询您的公共 IP 地址及其相关信息。</p>
+        </a>
+
+        <a href="video-to-gif.html" class="card bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition duration-300">
+          <div class="flex items-center mb-2">
+            <i class="fas fa-film text-blue-500 mr-2"></i>
+            <!-- 在线视频转GIF图标 -->
+            <h3 class="text-xl font-semibold">在线视频转GIF</h3>
+          </div>
+          <p class="text-gray-600">将视频文件转换为GIF动画，方便在社交媒体和聊天应用中分享。</p>
+        </a>
+      </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 hidden">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2023 在线工具箱. 保留所有权利.</p>
+      </div>
+    </footer>
+
+    <script src="custom.js"></script>
+  </body>
+</html>

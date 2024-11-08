@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日期计算器 - 在线工具箱</title>
+    <meta name="description" content="计算两个日期之间的天数差，或添加/减去天数以获取新的日期。" />
+    <meta name="keywords" content="日期计算器, 在线工具, 日期差, 日期加减" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans">
+    <!-- 头部导航 -->
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <span class="text-2xl font-bold">在线工具箱</span>
+        <nav class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="language-toggle" class="text-white hover:underline">
+              <i class="fas fa-globe"></i>
+              <!-- 多语言切换图标 -->
+            </button>
+            <div id="language-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
+              <a href="../index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">中文</a>
+              <a href="/en/index-en.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+              <!-- 可以添加更多语言选项 -->
+            </div>
+          </div>
+          <button id="toggle-mode" class="text-white hover:underline">
+            <i class="fas fa-adjust"></i>
+            <!-- 切换模式图标 -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 中间内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6">日期计算器</h1>
+
+      <!-- 面包屑导航 -->
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-600">
+          <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-gray-800">日期计算器</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 主体功能区 -->
+        <div class="md:col-span-2 space-y-8">
+          <!-- 在线日期时间间隔计算 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">在线日期时间间隔计算</h3>
+            <div class="mb-4">
+              <label for="start-date" class="block text-sm font-medium text-gray-700">开始日期</label>
+              <input type="date" id="start-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="2023-10-05" />
+            </div>
+            <div class="mb-4">
+              <label for="end-date" class="block text-sm font-medium text-gray-700">结束日期</label>
+              <input type="date" id="end-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" value="2024-01-01" />
+            </div>
+            <div class="mb-4">
+              <label for="interval-result" class="block text-sm font-medium text-gray-700">结果</label>
+              <input type="text" id="interval-result" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" readonly />
+            </div>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">计算</button>
+          </div>
+
+          <!-- 在线日期计算 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">在线日期计算</h3>
+            <div class="mb-4">
+              <label for="base-date" class="block text-sm font-medium text-gray-700">基准日期</label>
+              <input type="date" id="base-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+            <div class="mb-4">
+              <label for="days-to-add" class="block text-sm font-medium text-gray-700">添加/减去天数</label>
+              <input type="number" id="days-to-add" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+            <div class="mb-4">
+              <label for="calculated-date" class="block text-sm font-medium text-gray-700">结果日期</label>
+              <input type="text" id="calculated-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" readonly />
+            </div>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">计算</button>
+          </div>
+
+          <!-- 在线日期推演计算 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">在线日期推演计算</h3>
+            <div class="mb-4">
+              <label for="start-time" class="block text-sm font-medium text-gray-700">开始时间</label>
+              <input type="date" id="start-time" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+            <div class="mb-4">
+              <label for="end-time" class="block text-sm font-medium text-gray-700">结束时间</label>
+              <input type="date" id="end-time" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+            </div>
+            <div class="mb-4">
+              <label for="generated-dates" class="block text-sm font-medium text-gray-700">生成日期</label>
+              <textarea id="generated-dates" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" rows="5" readonly></textarea>
+            </div>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">生成</button>
+          </div>
+        </div>
+
+        <!-- 相关工具小组件区域 -->
+        <div class="space-y-6">
+          <!-- 关于本站 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">关于本站</h3>
+            <p class="text-gray-600">在线工具箱是一个提供各种在线工具的网站，帮助用户解决日常工作和生活中的各种问题。</p>
+          </div>
+
+          <!-- 相关工具 -->
+          <div class="bg-white rounded-lg shadow-lg p-6 related-tools">
+            <h3 class="text-xl font-semibold mb-4">相关工具</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <!-- 时间戳转换卡片 -->
+              <a href="timestamp.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-clock text-blue-500 text-2xl mr-2"></i>
+                <!-- 时间戳转换图标 -->
+                <h3 class="text-lg font-semibold">时间戳转换</h3>
+              </a>
+
+              <!-- JSON 格式化卡片 -->
+              <a href="json-formatter.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-code text-blue-500 text-2xl mr-2"></i>
+                <!-- JSON 格式化图标 -->
+                <h3 class="text-lg font-semibold">JSON 格式化</h3>
+              </a>
+
+              <!-- 我的 IP 查询卡片 -->
+              <a href="ip-lookup.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-globe text-blue-500 text-2xl mr-2"></i>
+                <!-- 我的 IP 查询图标 -->
+                <h3 class="text-lg font-semibold">我的 IP 查询</h3>
+              </a>
+
+              <!-- 在线视频转GIF卡片 -->
+              <a href="video-to-gif.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-film text-blue-500 text-2xl mr-2"></i>
+                <!-- 在线视频转GIF图标 -->
+                <h3 class="text-lg font-semibold">在线视频转GIF</h3>
+              </a>
+            </div>
+          </div>
+
+          <!-- 最新文章 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">最新文章</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-blue-600 hover:underline">如何使用时间戳转换工具</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">JSON 格式化的最佳实践</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">我的 IP 查询工具详解</a></li>
+              <!-- 可以添加更多最新文章链接 -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 hidden">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2023 在线工具箱. 保留所有权利.</p>
+      </div>
+    </footer>
+
+    <script src="custom.js"></script>
+  </body>
+</html>

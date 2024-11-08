@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>我的 IP 查询 - 在线工具箱</title>
+    <meta name="description" content="查询您的公共 IP 地址及其相关信息。" />
+    <meta name="keywords" content="IP 查询, 在线工具, 公共 IP, IP 地址" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+  </head>
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans">
+    <!-- 头部导航 -->
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <span class="text-2xl font-bold">在线工具箱</span>
+        <nav class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="language-toggle" class="text-white hover:underline">
+              <i class="fas fa-globe"></i>
+              <!-- 多语言切换图标 -->
+            </button>
+            <div id="language-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
+              <a href="../index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">中文</a>
+              <a href="/en/index-en.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+              <!-- 可以添加更多语言选项 -->
+            </div>
+          </div>
+          <button id="toggle-mode" class="text-white hover:underline">
+            <i class="fas fa-adjust"></i>
+            <!-- 切换模式图标 -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 中间内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6">我的 IP 查询</h1>
+
+      <!-- 面包屑导航 -->
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-600">
+          <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-gray-800">我的 IP 查询</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 主体功能区 -->
+        <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+          <div class="mb-4">
+            <label for="ip-address" class="block text-sm font-medium text-gray-700">您的 IP 地址</label>
+            <input type="text" id="ip-address" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" readonly />
+          </div>
+          <div class="mb-4">
+            <label for="ip-info" class="block text-sm font-medium text-gray-700">IP 地址信息</label>
+            <textarea id="ip-info" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" rows="10" readonly></textarea>
+          </div>
+          <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">查询 IP</button>
+        </div>
+
+        <!-- 相关工具小组件区域 -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <h3 class="text-xl font-semibold mb-4">相关工具</h3>
+          <ul class="space-y-2">
+            <li><a href="timestamp.html" class="text-blue-600 hover:underline">时间戳转换</a></li>
+            <li><a href="json-formatter.html" class="text-blue-600 hover:underline">JSON 格式化</a></li>
+            <!-- 可以添加更多相关工具链接 -->
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 hidden">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2023 在线工具箱. 保留所有权利.</p>
+      </div>
+    </footer>
+    <script src="custom.js"></script>
+  </body>
+</html>

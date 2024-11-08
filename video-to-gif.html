@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线视频转GIF - 在线工具箱</title>
+    <meta name="description" content="详细介绍如何使用在线视频转GIF工具，将视频文件转换为GIF动画。" />
+    <meta name="keywords" content="在线视频转GIF, 视频转GIF, GIF转换, 在线工具" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <link href="custom.css" rel="stylesheet" />
+  </head>
+
+  <body class="flex flex-col min-h-screen bg-gray-100 font-sans">
+    <!-- 头部导航 -->
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <span class="text-2xl font-bold">在线工具箱</span>
+        <nav class="flex items-center space-x-4">
+          <div class="relative">
+            <button id="language-toggle" class="text-white hover:underline">
+              <i class="fas fa-globe"></i>
+              <!-- 多语言切换图标 -->
+            </button>
+            <div id="language-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden">
+              <a href="/index.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">中文</a>
+              <a href="/en/index-en.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">English</a>
+              <!-- 可以添加更多语言选项 -->
+            </div>
+          </div>
+          <button id="toggle-mode" class="text-white hover:underline">
+            <i class="fas fa-adjust"></i>
+            <!-- 切换模式图标 -->
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- 中间内容 -->
+    <main class="flex-grow container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6">在线视频转GIF</h1>
+
+      <!-- 面包屑导航 -->
+      <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-600">
+          <li><a href="index.html" class="hover:text-blue-600">首页</a></li>
+          <li><span class="mx-2">/</span></li>
+          <li class="text-gray-800">在线视频转GIF</li>
+        </ol>
+      </nav>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 主体功能区 -->
+        <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+          <h2 id="what-is-gif" class="text-2xl font-semibold mb-4">什么是GIF？</h2>
+          <p class="mb-4">GIF（Graphics Interchange Format）是一种图像文件格式，支持无损压缩和动画。GIF文件通常用于在网页上显示简单的动画，或者在社交媒体和聊天应用中分享有趣的瞬间。</p>
+          <img src="https://via.placeholder.com/800x400" alt="GIF示例" class="mb-4 rounded-lg shadow-md" />
+
+          <h3 id="gif-history" class="text-xl font-semibold mb-4">GIF的历史</h3>
+          <p class="mb-4">GIF格式最初由CompuServe在1987年开发，旨在提供一种在不同计算机系统之间交换图像的通用格式。</p>
+
+          <h2 id="why-convert-video-to-gif" class="text-2xl font-semibold mb-4">为什么需要将视频转换为GIF？</h2>
+          <p class="mb-4">有时候，我们可能需要将视频中的某个片段转换为GIF，以便在社交媒体或聊天应用中分享。GIF文件通常比视频文件更小，加载速度更快，适合在移动设备上使用。</p>
+          <img src="https://via.placeholder.com/800x400" alt="视频转GIF示例" class="mb-4 rounded-lg shadow-md" />
+
+          <h3 id="gif-advantages" class="text-xl font-semibold mb-4">GIF的优势</h3>
+          <p class="mb-4">GIF文件具有较小的文件大小和较快的加载速度，适合在移动设备和网络环境中使用。</p>
+
+          <h2 id="how-to-use-tool" class="text-2xl font-semibold mb-4">如何使用在线视频转GIF工具？</h2>
+          <p class="mb-4">使用我们的在线视频转GIF工具非常简单。只需上传您的视频文件，选择开始和结束时间，然后点击“转换”按钮即可生成GIF文件。</p>
+          <img src="https://via.placeholder.com/800x400" alt="视频转GIF工具示例" class="mb-4 rounded-lg shadow-md" />
+
+          <h3 id="tool-features" class="text-xl font-semibold mb-4">工具功能</h3>
+          <p class="mb-4">我们的工具支持多种视频格式，并允许用户自定义GIF的帧率和质量。</p>
+
+          <h2 id="try-now" class="text-2xl font-semibold mb-4">立即尝试</h2>
+          <p class="mb-4">准备好将您的视频转换为GIF了吗？立即访问我们的在线视频转GIF工具，开始您的创作吧！</p>
+
+          <a href="#" class="block w-full md:max-w-2xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+            <div class="flex flex-col md:flex-row">
+              <div class="w-full md:w-3/5 p-3 md:p-4">
+                <div class="mb-2 md:mb-4">
+                  <h5 class="text-xl md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Card Link Example</h5>
+                </div>
+                <div>
+                  <p class="text-sm md:text-base font-normal text-gray-700 dark:text-gray-400">This is a simple card link example using Tailwind CSS. The card will stack on mobile devices and display side by side on larger screens.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-2/5 h-45 md:h-auto bg-gray-200 rounded-b-lg md:rounded-b-none md:rounded-r-lg flex items-center justify-center">
+                <svg class="w-16 h-16 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 相关工具小组件区域 -->
+        <div class="space-y-6">
+          <!-- 关于本站 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">关于本站</h3>
+            <p class="text-gray-600">在线工具箱是一个提供各种在线工具的网站，帮助用户解决日常工作和生活中的各种问题。</p>
+          </div>
+
+          <!-- 相关工具 -->
+          <div class="bg-white rounded-lg shadow-lg p-6 related-tools">
+            <h3 class="text-xl font-semibold mb-4">相关工具</h3>
+            <div class="grid grid-cols-1 gap-4">
+              <!-- 时间戳转换卡片 -->
+              <a href="timestamp.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-clock text-blue-500 text-2xl mr-2"></i>
+                <!-- 时间戳转换图标 -->
+                <h3 class="text-lg font-semibold">时间戳转换</h3>
+              </a>
+
+              <!-- JSON 格式化卡片 -->
+              <a href="json-formatter.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-code text-blue-500 text-2xl mr-2"></i>
+                <!-- JSON 格式化图标 -->
+                <h3 class="text-lg font-semibold">JSON 格式化</h3>
+              </a>
+
+              <!-- 我的 IP 查询卡片 -->
+              <a href="ip-lookup.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-globe text-blue-500 text-2xl mr-2"></i>
+                <!-- 我的 IP 查询图标 -->
+                <h3 class="text-lg font-semibold">我的 IP 查询</h3>
+              </a>
+
+              <!-- 在线视频转GIF卡片 -->
+              <a href="video-to-gif.html" class="card bg-white rounded-lg shadow-lg p-4 hover:shadow-xl transition duration-300 flex items-center">
+                <i class="fas fa-film text-blue-500 text-2xl mr-2"></i>
+                <!-- 在线视频转GIF图标 -->
+                <h3 class="text-lg font-semibold">在线视频转GIF</h3>
+              </a>
+            </div>
+          </div>
+
+          <!-- 最新文章 -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">最新文章</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-blue-600 hover:underline">如何使用时间戳转换工具</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">JSON 格式化的最佳实践</a></li>
+              <li><a href="#" class="text-blue-600 hover:underline">我的 IP 查询工具详解</a></li>
+              <!-- 可以添加更多最新文章链接 -->
+            </ul>
+          </div>
+
+          <!-- 文章目录 -->
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-4">文章目录</h3>
+            <ul class="space-y-2">
+              <li><a href="#what-is-gif" class="text-blue-600 hover:underline">什么是GIF？</a></li>
+              <ul class="pl-4 space-y-2">
+                <li><a href="#gif-history" class="text-blue-600 hover:underline">GIF的历史</a></li>
+              </ul>
+              <li><a href="#why-convert-video-to-gif" class="text-blue-600 hover:underline">为什么需要将视频转换为GIF？</a></li>
+              <ul class="pl-4 space-y-2">
+                <li><a href="#gif-advantages" class="text-blue-600 hover:underline">GIF的优势</a></li>
+              </ul>
+              <li><a href="#how-to-use-tool" class="text-blue-600 hover:underline">如何使用在线视频转GIF工具？</a></li>
+              <ul class="pl-4 space-y-2">
+                <li><a href="#tool-features" class="text-blue-600 hover:underline">工具功能</a></li>
+              </ul>
+              <li><a href="#try-now" class="text-blue-600 hover:underline">立即尝试</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-4 right-4 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-600 transition duration-300 hidden">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 底部 -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2023 在线工具箱. 保留所有权利.</p>
+      </div>
+    </footer>
+
+    <script src="custom.js"></script>
+  </body>
+</html>
